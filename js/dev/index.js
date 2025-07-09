@@ -579,6 +579,7 @@ class Popup {
 document.querySelector("[data-fls-popup]") ? window.addEventListener("load", window.flsPopup = new Popup({})) : null;
 const formTonKm = document.querySelector(".tonKm");
 const formMotoHours = document.querySelector(".motoHours");
+const btnReloadPage = document.querySelector(".btn-reload-page");
 function addInputStorage() {
   const _dataCalcTonKm = JSON.parse(localStorage.getItem("dataTonKm"));
   if (_dataCalcTonKm) {
@@ -722,3 +723,6 @@ function setLocal(checkbox, finalMileage, fuelValue, fuelPer100) {
     );
   }
 }
+btnReloadPage.addEventListener("click", () => {
+  location.reload();
+});
